@@ -12,6 +12,8 @@ public:
     int ExportToStringFile(TableData tD, string filename);
     void ImportFromStringFile(TableData* tD, string filename);
     void AddToTable(TableData* tD);
+    void EditTable(TableData* tD);
+    void DeleteUnitTable(TableData* tD);
 };
 
 #endif

@@ -7,6 +7,8 @@
         "valarray": "cpp",
         "iostream": "cpp",
         "fstream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp",
+        "string": "cpp"
     }
 }

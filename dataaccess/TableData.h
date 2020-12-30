@@ -13,11 +13,14 @@ public:
     int GetMaxID();
     void SetMaxID(int);
     vector <TableUnit*> GetTableData();
+    void SetTableData(TableUnit* tU, int i);
+    void DeleteUnit(int);
     void ReSize(int);
     int PushBack(TableUnit*);
     TableUnit* GetPointer(int i);
     string ToString();
     virtual TableUnit* NewPoint();
+    int FindUnit(string, string);
 };
 
 #endif

@@ -35,24 +35,54 @@ void MyUI::ImportFromStringFile(TableData* tD, string filename){
     }
     inFile.close();
 }
-
-void MyUI::AddToTable(TableData* tD)
+TableUnit* EditUnit(TableData* tD)
 {
     TableUnit* tU = tD->NewPoint();
     string stemp = "";
     vector<string> vts;
-    cin.ignore();
     for(auto s: tU->MemberName)
     {
         string member = "";
         cout << s << ": ";
         getline(cin, member);
-        //vts.push_back(Utility::SDecode(member));
         stemp = stemp + Utility::SEncode(member) + " ";
-        //cout <<stemp<<endl;
     }
     stemp[stemp.length()] = 0;
-    cout<<stemp<<endl;
+    //cout<<stemp<<endl;
     tU->FromStringFile(stemp);
-    tD->PushBack(tU);
+    return tU;
+}
+void MyUI::AddToTable(TableData* tD)
+{
+    tD->PushBack(EditUnit(tD));
+    cout << "New Table: "<< endl;
+    cout << tD->ToString();
+}
+void MyUI::EditTable(TableData* tD){
+    cout << tD->ToString();
+    cout << "Edit Employee has SSN: ";///// Chuyen vao ham main()
+    string ssn; cin >> ssn; cin.ignore();
+    int result = tD->FindUnit("SSN", ssn);
+    if (result == -1) cout << "Opp! There no match data."<<endl;
+    else{
+        cout << "Old data: " << result << ". " << tD->GetTableData()[result]->ToString() << endl;
+        cout << "New data: " << endl;
+        tD->SetTableData(EditUnit(tD), result);
+        cout << "New Table: "<< endl;
+        cout << tD->ToString();
+    }
+
+}
+void MyUI::DeleteUnitTable(TableData* tD){
+    cout << tD->ToString();
+    cout << "Edit Employee has SSN: ";///// Chuyen vao ham main()
+    string ssn; cin >> ssn; cin.ignore();
+    int result = tD->FindUnit("SSN", ssn);
+    if (result == -1) cout << "Opp!"<<endl;
+    else{
+        cout << "Old data: " << result << ". " << tD->GetTableData()[result]->ToString() << endl;
+        tD->DeleteUnit(result);
+        cout << "New Table: "<< endl;
+        cout << tD->ToString();
+    }
 }

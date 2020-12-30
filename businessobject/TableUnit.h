@@ -14,11 +14,13 @@ public:
     vector<string> MemberName;
     vector<string> MemberValue;
     TableUnit();
-    int Id;
-    int GetID();
+    //int Id;
+    //int GetID();
     virtual string ToString() = 0;
+    virtual void SetValueVector() = 0;
     virtual string ToStringFile() = 0;
     virtual void FromStringFile(string) = 0;
+    //int FindMember(string);
 };
 
 #endif

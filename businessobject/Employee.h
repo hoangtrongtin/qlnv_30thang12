@@ -19,8 +19,10 @@ public:// private:
 
 public:
     Employee();
-    Employee(int id, string fName, string mInit, string lName, long ssn, string bDate, string address, char sex, int salary, long superSSN, int dno);
+    //Employee(int id, string fName, string mInit, string lName, long ssn, string bDate, string address, char sex, int salary, long superSSN, int dno);
+    Employee(string fName, string mInit, string lName, long ssn, string bDate, string address, char sex, int salary, long superSSN, int dno);
     string ToString();
+    void SetValueVector();
     string ToStringFile();
     void FromStringFile(string);
     //TableUnit *NewPoint();
