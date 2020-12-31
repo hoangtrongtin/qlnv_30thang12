@@ -9,6 +9,7 @@
         "fstream": "cpp",
         "vector": "cpp",
         "xstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "memory_resource": "cpp"
     }
 }

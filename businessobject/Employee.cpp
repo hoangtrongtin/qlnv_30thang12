@@ -6,8 +6,7 @@
 Employee::Employee(){
     MemberName.resize(0);
     MemberValue.resize(0);
-    MemberName = {"FName", "MInit", "LName", "SSN", "BDate",
-                    "Address", "Sex", "Salary", "SuperSSN", "DNO"};
+    SetNameVector();
 }
 Employee::Employee(string fName, string mInit, string lName,
                     long ssn, string bDate, string address, char sex,
@@ -44,6 +43,10 @@ void Employee::SetValueVector(){
     MemberValue = {FName, MInit, LName, to_string(SSN),
                 BDate, Address, to_string(Sex), to_string(Salary), 
                 to_string(SuperSSN), to_string(DNO)};
+}
+void Employee::SetNameVector(){
+    MemberName = {"FName", "MInit", "LName", "SSN", "BDate",
+                    "Address", "Sex", "Salary", "SuperSSN", "DNO"};
 }
 string Employee::ToStringFile()
 {

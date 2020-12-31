@@ -40,7 +40,7 @@ TableUnit* EditUnit(TableData* tD)
     TableUnit* tU = tD->NewPoint();
     string stemp = "";
     vector<string> vts;
-    for(auto s: tU->MemberName)
+    for(auto s: tU->GetNameVector())
     {
         string member = "";
         cout << s << ": ";
@@ -65,7 +65,7 @@ void MyUI::EditTable(TableData* tD){
     int result = tD->FindUnit("SSN", ssn);
     if (result == -1) cout << "Opp! There no match data."<<endl;
     else{
-        cout << "Old data: " << result << ". " << tD->GetTableData()[result]->ToString() << endl;
+        cout << "Old data: " << result+1 << ". " << tD->GetTableData()[result]->ToString() << endl;
         cout << "New data: " << endl;
         tD->SetTableData(EditUnit(tD), result);
         cout << "New Table: "<< endl;

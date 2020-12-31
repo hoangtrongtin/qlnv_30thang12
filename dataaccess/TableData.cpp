@@ -53,7 +53,7 @@ TableUnit* TableData::NewPoint(){
     return tU;
 }
 int TableData::FindUnit(string name, string value){
-    vector<string> vtName = _data[0]->MemberName;
+    vector<string> vtName = _data[0]->GetNameVector();
     int pos = -1;
     for(int i = 0; i < vtName.size(); i++){//tim ten member
         if (vtName[i] == name) pos = i;
@@ -61,8 +61,8 @@ int TableData::FindUnit(string name, string value){
     if (pos == -1) return pos;// khong tim thay member
     for (int i = 0; i < _data.size(); i++){//tim gia tri member
         _data[i]->SetValueVector();
-        vector<string> vtValue = _data[i]->MemberValue;
-        if ((_data[i]->MemberValue)[pos] == value) return i;//tra ve vi tri member
+        vector<string> vtValue = _data[i]->GetValueVector();
+        if (vtValue[pos] == value) return i;//tra ve vi tri member
     }
     return -1;
 }

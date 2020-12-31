@@ -7,7 +7,7 @@
 using namespace std;
 
 class Employee: public TableUnit{
-public:// private:
+private:
     //int Id; // id is increasing number
     string FName, MInit, LName;
     long SSN;
@@ -23,6 +23,7 @@ public:
     Employee(string fName, string mInit, string lName, long ssn, string bDate, string address, char sex, int salary, long superSSN, int dno);
     string ToString();
     void SetValueVector();
+    void SetNameVector();
     string ToStringFile();
     void FromStringFile(string);
     //TableUnit *NewPoint();
